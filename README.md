@@ -54,4 +54,29 @@ exit
 
 https://sayrodigital.com/hardware/reconstrua-particoes-reservadas-pelo-sistema-efi/
 
-Se for dual boot linux, deve-se inicializar o pc com o super-grub2, montar a partição EFI (ajustar uuid fstab) e reinstar o grub
+Se for dual boot linux, deve-se inicializar o pc com o super-grub2, montar a partição EFI para isso verificar uuid no discs e ajustar o fstab:
+
+~~~
+sudo nano /etc/fstab
+sudo mount -a
+~~~
+
+verificar se a partição EFI foi montada e reinstar o grub:
+
+iniciando com o super grub2
+
+~~~
+sudo grub-install --boot-directory=/boot /dev/sdX
+~~~
+
+iniciando com o super grub2
+
+~~~
+sudo grub-install --boot-directory=/mnt/boot /dev/sdX
+~~~
+
+
+
+
+
+
